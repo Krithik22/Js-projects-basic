@@ -77,6 +77,6 @@ searchButton.onclick = () => {
 }
 
 getRandomHero.onclick = () => {
-    const randomNumber = Math.floor(Math.random() * 731)
+    const randomNumber = Math.floor((Math.random() * 731) + 1)
     randomHero(randomNumber)
 }
