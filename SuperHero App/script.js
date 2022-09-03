@@ -9,12 +9,12 @@ const appearance = document.getElementById('appearance')
 const power = document.getElementById('powerStats')
 
 const getHeroImage = (json) => {
-    heroImage.setAttribute('src',json.results[0].image.url)
+    heroImage.setAttribute('src',json.image.url)
     // heroImage.style.display='block'
 }
 
 const heroAppearance = (json) => {
-    const result = json.results[0].appearance
+    const result = json.appearance
     // console.log(result)
     appearance.innerHTML = `
         <h3>Appearance</h3>
@@ -26,7 +26,7 @@ const heroAppearance = (json) => {
 }
 
 const powerStats = (json) => {
-    const result = json.results[0].powerstats
+    const result = json.powerstats
     console.log(result)
     power.innerHTML = `
         <h3>Powers</h3>
@@ -54,7 +54,8 @@ const getHero = (heroName) => {
     .then(json => {
         console.log(json)
         hero.innerHTML = `<strong>${json.results[0].name}</strong>`
-        displayHero(json)
+        // const result = json.results[0]
+        displayHero(json.results[0])
     })
 }
 
@@ -62,8 +63,8 @@ const randomHero = (randomNumber) => {
     fetch(`https://www.superheroapi.com/api.php/${apiKey}/${randomNumber}`)
     .then(response => response.json())
     .then(json => {
-        // hero.innerHTML = `<strong>${json.results[0].name}</strong>`
-        // displayHero(json)
+        hero.innerHTML = `<strong>${json.name}</strong>`
+        displayHero(json)
         console.log(json)
     })
     
