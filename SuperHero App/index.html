@@ -5,13 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search For Heroes</title>
+    <link rel="stylesheet" href="style.css">
 </head> 
 <body>
-    <h1>SuperHero App</h1>
-    <h4>Get to Know about your favourite Heroes</h4>
-    <input type="text" id="searchBar">
-    <button id="searchButton">Search</button>
-    <img id="heroImage" src="" alt="" >
+    <div id="title">
+        <h1>SuperHero App</h1>
+        <h4>Get to Know about your favourite Heroes</h4>
+        <div>
+            <input type="text" id="searchBar">
+            <button id="searchButton">Search</button>  
+            <button id="randomHero">Get Random Hero</button>
+        </div>  
+    </div>
+    <div class="container">
+        <div>
+            <h1 id="heroName"></h1>
+            <img id="heroImage" src="" alt="">
+        </div>
+        <div>
+            <div id="appearance"></div>
+            <div id="powerStats"></div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

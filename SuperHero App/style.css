@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#title{
+    margin: 20px;
+}
+#title h1,
+#title h4,
+#title div{
+    padding: 5px 0px;
+}
+.container{
+    display: none;
+    margin: 20px;
+}
+#heroImage{
+    height: 200px;
+    width: 200px;
+}
+#appearance{
+    padding: 10px 5px;
+}
+#powerStats{
+    padding: 10px 5px;
+}
