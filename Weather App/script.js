@@ -49,9 +49,12 @@ const getWeatherData = (city) => {
   //HINT: Use template literals to create a url with input and an API key
    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`
   //CODE GOES HERE
-    fetch(url)
+    return fetch(url)
     .then(response => response.json())
-    .then(data => console.log(data))
+    .then(data => {
+        console.log(data)
+        return data
+    })
     .catch(err => console.log(err))
 }
 
@@ -59,11 +62,12 @@ const getWeatherData = (city) => {
  * Retrieve city input and get the weather data
  * HINT: Use the promise returned from getWeatherData()
  */
-const searchCity = () => {
+const searchCity = async () => {
   let city = document.getElementById('city-input').value;
   // CODE GOES HERE
     console.log(city)
-    getWeatherData(city)
+    const data = await getWeatherData(city)
+    showWeatherData(data)
     city = ''
 }
 
@@ -73,12 +77,12 @@ const searchCity = () => {
  */
 const showWeatherData = (weatherData) => {
     //CODE GOES HERE
-    cityName = weatherData.name
-    weatherType = weatherData.weather[0].main
-    temp = weatherData.main.temp
-    minTemp = weatherData.main.temp_min
-    maxTemp = weatherData.main.temp_max
-    console.log({cityName,weatherType,temp,minTemp,maxTemp})
+    cityName.innerText = weatherData.name
+    weatherType.innerText = weatherData.weather[0].main
+    temp.innerText = weatherData.main.temp
+    minTemp.innerText = weatherData.main.temp_min
+    maxTemp.innerText = weatherData.main.temp_max
+    // console.log({cityName,weatherType,temp,minTemp,maxTemp})
 }
 
 // const searchBtn = document.getElementById('searchBtn')
