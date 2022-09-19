@@ -1,0 +1,159 @@
+body {
+    background-color: #111;
+    color: white;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+  }
+ 
+  #logo{
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 5px;
+    width: 150px;
+  }
+  .original__movies {
+    padding: 20px 0px;
+  }
+  
+  .profile:hover .dropdown-container {
+    display: block;
+  }
+  
+  .original__movies,
+  .movies__container {
+    padding-left: 25px;
+    display: flex;
+    overflow-x: scroll;
+  }
+  
+  .original__movies::-webkit-scrollbar,
+  .movies__container::-webkit-scrollbar  {
+    display: none;
+  }
+
+  .original__movies .poster-image{
+    height: 250px;
+    width: auto;
+  }
+  .poster-image{
+    width: 200px;
+    margin: 10px;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+  }
+  .poster-image:hover{
+    transform: scale(1.1);
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding-top: 15px;
+  }
+  
+  .logo > img {
+    width: 120px;
+  }
+  
+  .profile {
+    position: relative;
+  }
+  
+  .profile > img {
+    width: 40px;
+  }
+  
+  img {
+    width: 100px;
+  }
+  
+  .featured {
+    height: 600px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    padding: 0 0 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .featured::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 7.4rem;
+    background-image: linear-gradient(
+      180deg,
+      transparent,
+      rgba(37, 37, 37, 0.61),
+      #111
+    );
+  }
+  
+  .netflixOriginals h2,
+  .movies__header h2 {
+    padding-left: 30px;
+  }
+  
+  .featured h2 {
+    font-size: 50px;
+    margin: 0;
+    z-index: 10;
+  }
+  
+  .featured .featured__buttons {
+    z-index: 1;
+  }
+  
+  .featured .featured__buttons button {
+    font-size: 16px;
+    color: white;
+    background-color: rgba(109, 109, 110, 0.7);
+    border: none;
+    padding: 8px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  
+  .featured .featured__buttons .button__play {
+    background-color: white;
+    color: black;
+    margin: 100px 0px 10px;
+  }
+  
+  .button__play i {
+    margin-right: 6px;
+  }
+  
+  .featured .featured__description {
+    max-width: 350px;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+    z-index: 1;
+
+  }
+  
+ 
+  
