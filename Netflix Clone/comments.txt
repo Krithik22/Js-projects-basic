@@ -1,0 +1,130 @@
+/* 
+🌟 APP: Make Netflix
+
+Here we have the Netflix app but it's up to you to make it work by pulling all the movies using an API!
+
+Create a fetchMovies() function that will make a dynamic API call to what you need 👇
+========================================
+
+- fetchMovies()
+
+** fetchMovies takes in an URL, a div id or class from the HTML, and a path (poster or backdrop)
+
+
+
+These are the 3 main functions and their URL'S you must create  👇
+========================================
+
+- getOriginals()
+  * URL : 'https://api.themoviedb.org/3/discover/tv?api_key=19f84e11932abbc79e6d83f82d6d1045&with_networks=213'
+
+- getTrendingNow()
+  * URL : 'https://api.themoviedb.org/3/trending/movie/week?api_key=19f84e11932abbc79e6d83f82d6d1045'
+
+- getTopRated()
+  * URL : 'https://api.themoviedb.org/3/movie/top_rated?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US&page=1'
+
+
+** These functions will provide the URL you need to fetch() movies of that genere **
+
+These are all the DIV ID's you're gonna need access to 👇
+========================================================
+#1 CLASS 👉 'original__movies' = Div that holds Netflix Originals
+#2 ID 👉 'trending' = Div that holds trending Movies
+#3 ID 👉 'top_rated' = Div that holds top rated Movies
+*/
+
+
+  // ** BONUS **
+  
+  // ** Fetches URL provided and returns response.json()
+  async function getMovieTrailer(id) {
+    //URL: `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+  
+  }
+  
+  // ** Function that adds movie data to the DOM
+  const setTrailer = trailers => {
+    // Set up iframe variable to hold id of the movieTrailer Element
+    // const iframe
+    // Set up variable to select .movieNotFound element
+    // const movieNotFound
+  
+    // If there is a trailer add the src for it
+    if (trailers.length > 0) {
+      // add d-none class to movieNotFound and remove it from iframe
+  
+      // add youtube link with trailers key to iframe.src
+    } else {
+      // Else remove d-none class to movieNotfound and ADD it to iframe
+  
+    }
+  }
+
+  <!-- Modal -->
+    <div
+      class="modal fade"
+      id="trailerModal"
+      tabindex="-1"
+      role="dialog"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <span class="movieNotFound">Trailer Not Found</span>
+            <iframe
+              id="movieTrailer"
+              height="400"
+              src=""
+              frameborder="0"
+              allow="autoplay; encrypted-media"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+     .modal-body iframe {
+    width: 100%;
+  }
+  
+  .modal-body span {
+    color: #333;
+    width: 100%;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+  }
+  
+/*   
+  .dropdown-container {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding-top: 3px;
+    display: none;
+  }
+  
+  .dropdown {
+    background-color: black;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100px;
+  }
+  
+  .dropdown span {
+    cursor: pointer;
+  } */
