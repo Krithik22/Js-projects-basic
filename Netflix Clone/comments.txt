@@ -128,3 +128,20 @@ These are all the DIV ID's you're gonna need access to 👇
   .dropdown span {
     cursor: pointer;
   } */
+
+    /* .logo > img {
+    width: 120px;
+  }
+  
+  .profile {
+    position: relative;
+  }
+  
+  .profile > img {
+    width: 40px;
+  }
+  
+  img {
+    width: 100px;
+  }
+   */

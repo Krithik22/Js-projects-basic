@@ -60,22 +60,7 @@ body {
     padding-top: 15px;
   }
   
-  .logo > img {
-    width: 120px;
-  }
-  
-  .profile {
-    position: relative;
-  }
-  
-  .profile > img {
-    width: 40px;
-  }
-  
-  img {
-    width: 100px;
-  }
-  
+
   .featured {
     height: 600px;
     position: relative;
