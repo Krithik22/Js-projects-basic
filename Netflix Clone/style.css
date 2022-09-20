@@ -6,12 +6,18 @@ body {
   }
  
   #logo{
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    left: 5px;
-    width: 150px;
+    width: 125px;
+    padding: 0px;
   }
+  #profile-logo{
+    width: 50px;
+    height: 50px;
+  }
+  .nav-bar{
+    background-color: #111;
+    transition: 500ms;
+  }
+
   .original__movies {
     padding: 20px 0px;
   }
@@ -50,14 +56,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: absolute;
+    padding: 0px 15px;
+    position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
     right: 0;
-    padding-top: 15px;
   }
   
 

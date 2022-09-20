@@ -132,8 +132,16 @@ window.onload = () => {
     fetchMovies(url,'#thriller_movies','poster_path')
   }
   
+const navBar = document.querySelector('header')
 
   
+window.addEventListener('scroll',() => {
+  if(window.scrollY > 100){
+    navBar.classList.add('nav-bar')
+  } else{
+    navBar.classList.remove('nav-bar')
+  }
+})
   
   
   
