@@ -96,7 +96,7 @@ These are all the DIV ID's you're gonna need access to 👇
         </div>
       </div>
     </div>
-     .modal-body iframe {
+  .modal-body iframe {
     width: 100%;
   }
   
@@ -129,7 +129,7 @@ These are all the DIV ID's you're gonna need access to 👇
     cursor: pointer;
   } */
 
-    /* .logo > img {
+  /* .logo > img {
     width: 120px;
   }
   

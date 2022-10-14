@@ -1,6 +1,8 @@
 
 
-const API_KEY = '19f84e11932abbc79e6d83f82d6d1045'
+// const API_KEY = '19f84e11932abbc79e6d83f82d6d1045'
+const API_KEY = 'dd5c4fce85743afa613dde6e95b26592'
+
 const requests = {
     fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
     fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
@@ -56,6 +58,8 @@ window.onload = () => {
         // Set attribute
         imageElement.setAttribute('data-id',movie.id)
         imageElement.setAttribute('class','poster-image')
+        imageElement.setAttribute('onclick',`handleClick(${movie.id})`)
+        // movie.addEventListener('click',() => {getMovieTrailer(movie.id)})
       // Set source
         imageElement.src = `https://image.tmdb.org/t/p/original${movie[path_type]}`
       // Append the imageElement to the dom_element selected
@@ -132,9 +136,7 @@ window.onload = () => {
     fetchMovies(url,'#thriller_movies','poster_path')
   }
   
-const navBar = document.querySelector('header')
-
-  
+const navBar = document.querySelector('header') 
 window.addEventListener('scroll',() => {
   if(window.scrollY > 100){
     navBar.classList.add('nav-bar')
@@ -142,7 +144,54 @@ window.addEventListener('scroll',() => {
     navBar.classList.remove('nav-bar')
   }
 })
-  
-  
-  
+
+// ** Fetches URL provided and returns response.json()
+async function getMovieTrailer(id) {
+  //URL: `https://api.themoviedb.org/3/movie/${id}/videos?api_key=19f84e11932abbc79e6d83f82d6d1045&language=en-US`
+  const trailerUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}&language=en-US`
+  try{
+    const response = await fetch(trailerUrl)
+    const videoData = await response.json()
+    // const movieArr = videoData.results
+    // console.log(movieArr)
+    // console.log(videoData.results.length)
+    console.log(videoData.results)
+    return videoData.results
+  } catch(err){
+    console.error(err)
+  }
+}
+
+
+// ** Function that adds movie data to the DOM
+const setTrailer = trailers => {
+  // Set up iframe variable to hold id of the movieTrailer Element
+  const iframe = document.querySelector('.movieTrailer')
+  // Set up variable to select .movieNotFound element
+  const movieNotFound = document.querySelector('.movieNotFound')
+// If there is a trailer add the src for it
+  if (trailers.length > 0) {
+    // add d-none class to movieNotFound and remove it from iframe
+    movieNotFound.classList.add('d-none')
+    iframe.classList.remove('d-none')
+    const movieId = trailers[0].key
+    console.log(trailers[0].key)
+    const trailerUrl = `https://www.youtube.com/embed/${movieId}?autoplay=1`
+    iframe.setAttribute('src',trailerUrl)
+    // add youtube link with trailers key to iframe.src
+  } else {
+    // Else remove d-none class to movieNotfound and ADD it to iframe
+    console.log(trailers.length)
+    console.log('else block')
+    iframe.classList.add('d-none')
+    movieNotFound.classList.remove('d-none')
+  }
+  $('#trailerModal').modal('show')
+}
+
+const handleClick = async (id) => {
+  const movieId = await getMovieTrailer(id)
+  setTrailer(movieId)
+}
+ 
   
